@@ -29,3 +29,11 @@ lib-search java -q spring-boot-starter-web
 ```shell
 lib-search java -q spring-boot-starter-web -p 1 -r 20
 ```
+
+查询特定的 groupId 或 artifactId 的依赖
+
+```shell
+lib-search java -a pagehelper-spring-boot-starter
+```
+
+查询后的结果支持上下选择依赖，并且使用回车复制到剪切板。
