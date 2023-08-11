@@ -57,8 +57,8 @@ async function searchJavaDependencies(options) {
       return;
     }
 
-    const choices = docs.map(element => ({
-      name: `${element.g}:${element.a}:${element.latestVersion}`,
+    const choices = docs.map((element, index) => ({
+      name: `${index + 1}. ${element.g}:${element.a}:${element.latestVersion}`,
       value: {
         groupId: element.g,
         artifactId: element.a,
@@ -73,6 +73,7 @@ async function searchJavaDependencies(options) {
         name: 'dependency',
         message: chalk.green(`找到 ${numFound} 个匹配的依赖。请选择一个依赖：`),
         choices,
+        loop: false
       }
     ]);
 
